@@ -79,6 +79,10 @@ namespace ImgSplitter
         private void bt_choosePath_Click(object sender, EventArgs e)
         {
             var openFileDialog1 = new OpenFileDialog();
+            // Set filter options and filter index.
+            openFileDialog1.Filter = "Image Files (.png)|*.png|Image Files (.jpg)|*.jpg|All Files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 1;
+
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 tb_filePath.Text = openFileDialog1.FileName;
